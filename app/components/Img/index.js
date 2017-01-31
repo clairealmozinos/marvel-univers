@@ -8,11 +8,12 @@ import React from 'react';
 export default class Img extends React.Component {
   render() {
     return (
-      <img src={this.props.src} />
+      <img src={this.props.src} alt={this.props.alt} />
     );
   }
 }
 
 Img.propTypes = {
   src: React.PropTypes.string.isRequired,
+  alt: React.PropTypes.string.isRequired,
 };

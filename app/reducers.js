@@ -1,10 +1,14 @@
+//
+// Creates the main reducer with the asynchronously loaded ones and routes
+//
+
 import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
-import ListHeroesReducer from 'containers/ListHeroes/reducer';
+import ListCharactersReducer from 'containers/ListCharacters/reducer';
+import CharacterIdReducer from 'containers/CharacterId/reducer';
 
-// Initial routing state
 const routeInitialState = fromJS({
   locationBeforeTransitions: null,
 });
@@ -21,11 +25,11 @@ function routeReducer(state = routeInitialState, action) {
   }
 }
 
-// Creates the main reducer with the asynchronously loaded ones
 export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
-    listHeroes: ListHeroesReducer,
+    listCharacters: ListCharactersReducer,
+    characterId: CharacterIdReducer,
     ...asyncReducers,
   });
 }
