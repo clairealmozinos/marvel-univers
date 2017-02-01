@@ -3,6 +3,7 @@
 //
 
 import React from 'react';
+import Header from 'components/Header';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class App extends React.Component {
@@ -10,7 +11,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <Header />
+        <div className="page">
+          {this.props.children}
+        </div>
       </div>
     );
   }

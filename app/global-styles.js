@@ -14,8 +14,12 @@ injectGlobal`
 
   #app {
     background-color: #fff;
+  }
+
+  .page {
     margin: auto;
-    max-width: 900px;
+    margin-top: 50px;
+    max-width: 850px;
     min-height: 100%;
     text-align: center;
     width: 80%;

@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
-import App from 'containers/App';
+import App from 'components/App';
 import createRoutes from './routes';
 import configureStore from './store';
 import './global-styles';
@@ -28,9 +28,7 @@ import { makeSelectLocationState } from 'containers/App/selectors';
 const initialState = {};
 const store = configureStore(initialState, browserHistory);
 
-// Sync history and store, as the react-router-redux reducer
-// is under the non-default key ("routing"), selectLocationState
-// must be provided for resolving how to retrieve the "route" in the state
+// Sync history and store
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: makeSelectLocationState(),
 });
@@ -47,8 +45,6 @@ ReactDOM.render(
       history={history}
       routes={rootRoute}
       render={
-        // Scroll to top when going to a new page, imitating default browser
-        // behaviour
         applyRouterMiddleware(useScroll())
       }
     />
@@ -56,9 +52,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-// Install ServiceWorker and AppCache in the end since
-// it's not most important operation and if main code fails,
-// we do not want it installed
+// Install ServiceWorker and AppCache
 if (process.env.NODE_ENV === 'production') {
   require('offline-plugin/runtime').install(); // eslint-disable-line global-require
 }

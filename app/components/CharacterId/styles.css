@@ -1,0 +1,24 @@
+.idPage {
+  text-align: left;
+}
+
+.idPage img {
+  display: inline-block;
+  margin-right: 50px;
+  width: 45%;
+}
+
+.idPage div {
+  display: inline-block;
+  width: 45%;
+}
+
+@media (max-width: 650px) {
+  .idPage img {
+    width: 100%;
+  }
+
+  .idPage div {
+    width: 100%;
+  }
+}
