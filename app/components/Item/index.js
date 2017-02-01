@@ -6,7 +6,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import H2 from 'components/H2';
 import Img from 'components/Img';
-import styles from './styles.css';
+import './styles.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class Item extends React.Component {

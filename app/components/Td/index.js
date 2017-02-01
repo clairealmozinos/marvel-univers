@@ -3,7 +3,7 @@
 //
 
 import React from 'react';
-import styles from './styles.css';
+import './styles.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class Td extends React.Component {

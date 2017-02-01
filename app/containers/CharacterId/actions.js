@@ -17,10 +17,9 @@ export function getCharacterId(id) {
     .get(`/v1/public/characters/${id}`)
     .end((err, res) => {
       if (!err) {
-        console.log(res.body.data.results);
         dispatch(characterId(res.body.data.results));
       } else {
-        console.log(err);
+        console.log(err); // eslint-disable-line no-console
       }
     });
 }

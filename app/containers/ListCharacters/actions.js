@@ -17,10 +17,9 @@ export function getListCharacters() {
     .get('/v1/public/characters')
     .end((err, res) => {
       if (!err) {
-        console.log(res.body.data.results);
         dispatch(listCharacters(res.body.data.results));
       } else {
-        console.log(err);
+        console.log(err); // eslint-disable-line no-console
       }
     });
 }

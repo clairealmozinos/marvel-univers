@@ -14,6 +14,4 @@ const makeSelectLocationState = () => {
   };
 };
 
-export {
-  makeSelectLocationState,
-};
+export default makeSelectLocationState;

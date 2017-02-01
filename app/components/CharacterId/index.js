@@ -6,10 +6,7 @@ import React from 'react';
 import H1 from 'components/H1';
 import Img from 'components/Img';
 import Table from 'components/Table';
-import Tr from 'components/Tr';
-import Th from 'components/Th';
-import Td from 'components/Td';
-import styles from './styles.css';
+import './styles.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class CharacterId extends React.Component {
@@ -31,5 +28,11 @@ export default class CharacterId extends React.Component {
 }
 
 CharacterId.propTypes = {
-  character: React.PropTypes.object,
+  character: React.PropTypes.shape({
+    name: React.PropTypes.string,
+    description: React.PropTypes.string,
+    thumbnail: React.PropTypes.object,
+    comics: React.PropTypes.object,
+    series: React.PropTypes.object,
+  }).isRequired,
 };

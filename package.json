@@ -22,14 +22,13 @@
     "start:production": "npm run test && npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
     "lint": "npm run lint:js",
-    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/ node_modules/ server/",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
   },
-  "pre-commit": "lint:staged",
   "babel": {
     "presets": [
       [
@@ -84,6 +83,7 @@
       }
     },
     "rules": {
+      "linebreak-style": "off",
       "comma-dangle": [
         "error",
         "always-multiline"
@@ -140,11 +140,13 @@
     "css-loader": "^0.26.1",
     "express": "4.14.0",
     "fontfaceobserver": "2.0.7",
+    "html-webpack-plugin": "^2.24.1",
     "immutable": "3.8.1",
     "invariant": "2.2.2",
     "ip": "1.1.4",
     "lodash": "4.17.2",
     "minimist": "1.2.0",
+    "offline-plugin": "^4.5.2",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-helmet": "3.2.2",
@@ -162,7 +164,10 @@
     "styled-components": "1.1.2",
     "superagent": "^3.4.1",
     "uuid": "^3.0.1",
-    "warning": "3.0.0"
+    "warning": "3.0.0",
+    "webpack": "^2.2.0-rc.3",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.16.1"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",

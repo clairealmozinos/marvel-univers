@@ -6,7 +6,7 @@ import React from 'react';
 import Tr from 'components/Tr';
 import Th from 'components/Th';
 import Td from 'components/Td';
-import styles from './styles.css';
+import './styles.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class Table extends React.Component {

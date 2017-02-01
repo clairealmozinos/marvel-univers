@@ -15,14 +15,11 @@ import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
+import makeSelectLocationState from 'containers/App/selectors';
 import App from 'components/App';
 import createRoutes from './routes';
 import configureStore from './store';
 import './global-styles';
-
-// Import selector for `syncHistoryWithStore`
-import { makeSelectLocationState } from 'containers/App/selectors';
-
 
 // Create redux store with history
 const initialState = {};
