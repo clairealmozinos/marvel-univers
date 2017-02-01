@@ -18,7 +18,13 @@ This project use the Marvel's API https://developer.marvel.com/
 ## Config
 
 * Add your public & private API keys in `app/manifest.json`
-* Note: If you don't have an API key at https://developer.marvel.com/ *
+
+ *Note: If you don't have an API key at https://developer.marvel.com/*
+
+## Command
+
+* Launch eslint `$ npm run lint`
+ *Note: eslint extends airbnb*
 
 ## Licence
 
