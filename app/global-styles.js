@@ -13,8 +13,9 @@ injectGlobal`
   }
 
   #app {
-    background-color: #fffff;
+    background-color: #fff;
     margin: auto;
+    max-width: 900px;
     min-height: 100%;
     text-align: center;
     width: 80%;

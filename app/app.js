@@ -3,13 +3,18 @@
 //
 
 import 'babel-polyfill';
+
+// Load the favicon
+import '!file-loader?name=[name].[ext]!./favicon.ico';  // eslint-disable-line import/no-unresolved, import/no-webpack-loader-syntax
+
+import 'sanitize.css/sanitize.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
-import 'sanitize.css/sanitize.css';
 import App from 'containers/App';
 import createRoutes from './routes';
 import configureStore from './store';
@@ -17,12 +22,6 @@ import './global-styles';
 
 // Import selector for `syncHistoryWithStore`
 import { makeSelectLocationState } from 'containers/App/selectors';
-
-// Load the favicon, the manifest.json file and the .htaccess file
-/* eslint-disable import/no-unresolved, import/extensions */
-import '!file-loader?name=[name].[ext]!./favicon.ico';
-import 'file-loader?name=[name].[ext]!./.htaccess';
-/* eslint-enable import/no-unresolved, import/extensions */
 
 
 // Create redux store with history

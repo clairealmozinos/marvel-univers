@@ -1,28 +1,31 @@
 //
-// CharacterId page
+// Container CharacterId
 //
 
 import React from 'react';
 import { connect } from 'react-redux';
-import H1 from 'components/H1';
+import CharacterId from 'components/CharacterId';
 import { getCharacterId } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
-export class CharacterId extends React.Component {
+export class CharacterIdContainer extends React.Component {
   componentWillMount() {
     this.props.getCharacterId(window.location.pathname.split('/')[2]);
   }
 
   render() {
+    if (this.props.character.length <= 0) {
+      return (<div />);
+    }
+    const character = this.props.character[0];
     return (
-      <div>
-        <H1 title="Héro :" />
-      </div>
+      <CharacterId character={character} />
     );
   }
 }
 
-CharacterId.propTypes = {
+CharacterIdContainer.propTypes = {
+  character: React.PropTypes.arrayOf(React.PropTypes.object),
   getCharacterId: React.PropTypes.func,
 };
 
@@ -30,8 +33,9 @@ CharacterId.propTypes = {
 // Mapping
 //
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
+    character: state.get('characterId').character,
   };
 }
 
@@ -44,4 +48,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CharacterId);
+)(CharacterIdContainer);
