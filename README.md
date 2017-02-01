@@ -24,6 +24,7 @@ This project use the Marvel's API https://developer.marvel.com/
 ## Command
 
 * Launch eslint `$ npm run lint`
+
  *Note: eslint extends airbnb*
 
 ## Licence
