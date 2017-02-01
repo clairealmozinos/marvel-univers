@@ -17,8 +17,8 @@ This project use the Marvel's API https://developer.marvel.com/
 
 ## Config
 
-* Add your public & private API key in `app/manifest.json`
-* Note: If you don't have your API key at https://developer.marvel.com/ *
+* Add your public & private API keys in `app/manifest.json`
+* Note: If you don't have an API key at https://developer.marvel.com/ *
 
 ## Licence
 
