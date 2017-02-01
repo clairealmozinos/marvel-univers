@@ -12,8 +12,8 @@ This project use the Marvel's API https://developer.marvel.com/
 ## Quick Start
 
 1. Clone this repo using $ git clone --depth=1 https://github.com/clairealmozinos/marvel-univers.git
-2. Run $ npm install
-3. Run $ npm start
+2. Run `$ npm install`
+3. Run `$ npm start`
 
 ## Config
 
